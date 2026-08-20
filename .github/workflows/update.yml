@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: github-profile-update
+  cancel-in-progress: false
+
 jobs:
   update-profile:
     runs-on: ubuntu-latest
@@ -15,6 +19,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -39,4 +45,6 @@ jobs:
           fi
 
           git commit -m "chore: update profile stats"
-          git push
+
+          git pull --rebase origin main
+          git push origin main
