@@ -1,0 +1,365 @@
+import json
+import os
+import urllib.request
+from datetime import datetime, timezone
+from html import escape
+
+USERNAME = os.getenv("GITHUB_REPOSITORY_OWNER", "fdogukanctk")
+
+ROLE = "Software Engineer"
+OS_NAME = "macOS"
+HOST = "MacBook Pro"
+IDE = "VS Code, Cursor"
+PROGRAMMING_LANGUAGES = "C#, TypeScript, JavaScript, Python"
+REAL_LANGUAGES = "Turkish, English"
+HOBBIES = "Software, Technology"
+
+ASCII_ART = r"""
+              .:-=++++=-:.
+           :=*############*+:
+         :+##################*:
+        +######################*
+      .*#########################=
+      +###########################
+     =#############################
+     ##############################
+    :##############################
+    -##############################
+    -##############################
+    :##############################
+     ##############################
+     +############################
+      ###########################
+       *########################+
+        +######################=
+          +##################*:
+            :=*###########+:
+                 .:---:.
+"""
+
+GRAPHQL_URL = "https://api.github.com/graphql"
+
+
+def graphql(query, variables):
+    token = os.getenv("GITHUB_TOKEN")
+
+    if not token:
+        raise RuntimeError("GITHUB_TOKEN bulunamadı.")
+
+    payload = json.dumps(
+        {
+            "query": query,
+            "variables": variables,
+        }
+    ).encode("utf-8")
+
+    request = urllib.request.Request(
+        GRAPHQL_URL,
+        data=payload,
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+            "User-Agent": "github-profile-generator",
+        },
+        method="POST",
+    )
+
+    with urllib.request.urlopen(request) as response:
+        result = json.loads(response.read().decode("utf-8"))
+
+    if result.get("errors"):
+        raise RuntimeError(result["errors"])
+
+    return result["data"]
+
+
+def get_profile():
+    query = """
+    query($login: String!) {
+      user(login: $login) {
+        login
+        name
+        createdAt
+        followers {
+          totalCount
+        }
+        repositories(
+          first: 100
+          ownerAffiliations: OWNER
+          privacy: PUBLIC
+          isFork: false
+        ) {
+          totalCount
+          nodes {
+            stargazerCount
+            primaryLanguage {
+              name
+            }
+          }
+        }
+        contributionsCollection {
+          totalCommitContributions
+          totalPullRequestContributions
+          totalIssueContributions
+          restrictedContributionsCount
+        }
+      }
+    }
+    """
+
+    data = graphql(query, {"login": USERNAME})
+    user = data["user"]
+
+    if user is None:
+        raise RuntimeError(f"GitHub kullanıcısı bulunamadı: {USERNAME}")
+
+    repositories = user["repositories"]["nodes"]
+    stars = sum(repo["stargazerCount"] for repo in repositories)
+
+    languages = {}
+
+    for repo in repositories:
+        language = repo.get("primaryLanguage")
+
+        if language:
+            name = language["name"]
+            languages[name] = languages.get(name, 0) + 1
+
+    top_languages = sorted(
+        languages.items(),
+        key=lambda item: item[1],
+        reverse=True,
+    )[:5]
+
+    created_at = datetime.fromisoformat(
+        user["createdAt"].replace("Z", "+00:00")
+    )
+
+    now = datetime.now(timezone.utc)
+    account_days = (now - created_at).days
+
+    contributions = user["contributionsCollection"]
+
+    return {
+        "login": user["login"],
+        "name": user["name"] or user["login"],
+        "followers": user["followers"]["totalCount"],
+        "repos": user["repositories"]["totalCount"],
+        "stars": stars,
+        "commits": contributions["totalCommitContributions"],
+        "pull_requests": contributions["totalPullRequestContributions"],
+        "issues": contributions["totalIssueContributions"],
+        "private_contributions": contributions["restrictedContributionsCount"],
+        "account_days": account_days,
+        "top_languages": ", ".join(name for name, _ in top_languages) or "N/A",
+    }
+
+
+def text_line(label, value, y, label_color, value_color):
+    return f"""
+    <text x="570" y="{y}" font-size="16" font-family="monospace">
+        <tspan fill="{label_color}" font-weight="600">{escape(label)}</tspan>
+        <tspan fill="{value_color}">  {escape(str(value))}</tspan>
+    </text>
+    """
+
+
+def section(title, y, accent, muted):
+    return f"""
+    <text x="570" y="{y}" fill="{accent}" font-size="16" font-family="monospace">
+        ── {escape(title)}
+    </text>
+    <line
+        x1="700"
+        y1="{y - 5}"
+        x2="1120"
+        y2="{y - 5}"
+        stroke="{muted}"
+        stroke-width="1"
+    />
+    """
+
+
+def create_svg(profile, theme):
+    dark = theme == "dark"
+
+    background = "#0d1117" if dark else "#ffffff"
+    border = "#30363d" if dark else "#d0d7de"
+    text = "#c9d1d9" if dark else "#24292f"
+    muted = "#6e7681" if dark else "#57606a"
+    accent = "#58a6ff" if dark else "#0969da"
+    orange = "#ffa657" if dark else "#bc4c00"
+    green = "#3fb950" if dark else "#1a7f37"
+
+    ascii_lines = ASCII_ART.strip("\n").splitlines()
+
+    ascii_svg = []
+
+    y = 82
+
+    for line in ascii_lines:
+        ascii_svg.append(
+            f"""
+            <text
+                x="50"
+                y="{y}"
+                fill="{muted}"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >{escape(line)}</text>
+            """
+        )
+        y += 17
+
+    rows = []
+
+    rows.append(section(f"{USERNAME}@github", 75, accent, border))
+
+    rows.append(text_line("OS:", OS_NAME, 125, orange, text))
+    rows.append(
+        text_line(
+            "Uptime:",
+            f"{profile['account_days']:,} days",
+            153,
+            orange,
+            text,
+        )
+    )
+    rows.append(text_line("Host:", HOST, 181, orange, text))
+    rows.append(text_line("Kernel:", ROLE, 209, orange, text))
+    rows.append(text_line("IDE:", IDE, 237, orange, text))
+
+    rows.append(
+        text_line(
+            "Languages.Programming:",
+            PROGRAMMING_LANGUAGES,
+            293,
+            orange,
+            text,
+        )
+    )
+    rows.append(
+        text_line(
+            "Languages.Real:",
+            REAL_LANGUAGES,
+            321,
+            orange,
+            text,
+        )
+    )
+    rows.append(text_line("Hobbies:", HOBBIES, 349, orange, text))
+
+    rows.append(section("GitHub Stats", 415, accent, border))
+
+    rows.append(
+        text_line(
+            "Repos:",
+            f"{profile['repos']:,}",
+            463,
+            orange,
+            text,
+        )
+    )
+    rows.append(
+        text_line(
+            "Stars:",
+            f"{profile['stars']:,}",
+            491,
+            orange,
+            text,
+        )
+    )
+    rows.append(
+        text_line(
+            "Followers:",
+            f"{profile['followers']:,}",
+            519,
+            orange,
+            text,
+        )
+    )
+    rows.append(
+        text_line(
+            "Commits (1y):",
+            f"{profile['commits']:,}",
+            547,
+            orange,
+            green,
+        )
+    )
+    rows.append(
+        text_line(
+            "Pull Requests (1y):",
+            f"{profile['pull_requests']:,}",
+            575,
+            orange,
+            text,
+        )
+    )
+    rows.append(
+        text_line(
+            "Top Languages:",
+            profile["top_languages"],
+            603,
+            orange,
+            text,
+        )
+    )
+
+    return f"""<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1200"
+    height="680"
+    viewBox="0 0 1200 680"
+>
+    <rect
+        x="1"
+        y="1"
+        width="1198"
+        height="678"
+        rx="12"
+        fill="{background}"
+        stroke="{border}"
+        stroke-width="2"
+    />
+
+    {''.join(ascii_svg)}
+
+    {''.join(rows)}
+
+    <text
+        x="50"
+        y="640"
+        fill="{muted}"
+        font-size="12"
+        font-family="monospace"
+    >
+        Last updated: {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")}
+    </text>
+</svg>
+"""
+
+
+def main():
+    profile = get_profile()
+
+    dark_svg = create_svg(profile, "dark")
+    light_svg = create_svg(profile, "light")
+
+    with open("dark_mode.svg", "w", encoding="utf-8") as file:
+        file.write(dark_svg)
+
+    with open("light_mode.svg", "w", encoding="utf-8") as file:
+        file.write(light_svg)
+
+    print("Profile generated.")
+    print(f"User: {profile['login']}")
+    print(f"Repos: {profile['repos']}")
+    print(f"Stars: {profile['stars']}")
+    print(f"Followers: {profile['followers']}")
+    print(f"Commits (1y): {profile['commits']}")
+
+
+if __name__ == "__main__":
+    main()
