@@ -1,0 +1,305 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1200"
+    height="680"
+    viewBox="0 0 1200 680"
+>
+    <rect
+        x="1"
+        y="1"
+        width="1198"
+        height="678"
+        rx="12"
+        fill="#0d1117"
+        stroke="#30363d"
+        stroke-width="2"
+    />
+
+    
+            <text
+                x="50"
+                y="82"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >              .:-=++++=-:.</text>
+            
+            <text
+                x="50"
+                y="99"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >           :=*############*+:</text>
+            
+            <text
+                x="50"
+                y="116"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >         :+##################*:</text>
+            
+            <text
+                x="50"
+                y="133"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >        +######################*</text>
+            
+            <text
+                x="50"
+                y="150"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >      .*#########################=</text>
+            
+            <text
+                x="50"
+                y="167"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >      +###########################</text>
+            
+            <text
+                x="50"
+                y="184"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >     =#############################</text>
+            
+            <text
+                x="50"
+                y="201"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >     ##############################</text>
+            
+            <text
+                x="50"
+                y="218"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >    :##############################</text>
+            
+            <text
+                x="50"
+                y="235"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >    -##############################</text>
+            
+            <text
+                x="50"
+                y="252"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >    -##############################</text>
+            
+            <text
+                x="50"
+                y="269"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >    :##############################</text>
+            
+            <text
+                x="50"
+                y="286"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >     ##############################</text>
+            
+            <text
+                x="50"
+                y="303"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >     +############################</text>
+            
+            <text
+                x="50"
+                y="320"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >      ###########################</text>
+            
+            <text
+                x="50"
+                y="337"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >       *########################+</text>
+            
+            <text
+                x="50"
+                y="354"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >        +######################=</text>
+            
+            <text
+                x="50"
+                y="371"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >          +##################*:</text>
+            
+            <text
+                x="50"
+                y="388"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >            :=*###########+:</text>
+            
+            <text
+                x="50"
+                y="405"
+                fill="#6e7681"
+                font-family="monospace"
+                font-size="13"
+                xml:space="preserve"
+            >                 .:---:.</text>
+            
+
+    
+    <text x="570" y="75" fill="#58a6ff" font-size="16" font-family="monospace">
+        ── fdogukanctk@github
+    </text>
+    <line
+        x1="700"
+        y1="70"
+        x2="1120"
+        y2="70"
+        stroke="#30363d"
+        stroke-width="1"
+    />
+    
+    <text x="570" y="125" font-size="16" font-family="monospace">
+        <tspan fill="#ffa657" font-weight="600">OS:</tspan>
+        <tspan fill="#c9d1d9">  macOS</tspan>
+    </text>
+    
+    <text x="570" y="153" font-size="16" font-family="monospace">
+        <tspan fill="#ffa657" font-weight="600">Uptime:</tspan>
+        <tspan fill="#c9d1d9">  1,635 days</tspan>
+    </text>
+    
+    <text x="570" y="181" font-size="16" font-family="monospace">
+        <tspan fill="#ffa657" font-weight="600">Host:</tspan>
+        <tspan fill="#c9d1d9">  MacBook Pro</tspan>
+    </text>
+    
+    <text x="570" y="209" font-size="16" font-family="monospace">
+        <tspan fill="#ffa657" font-weight="600">Kernel:</tspan>
+        <tspan fill="#c9d1d9">  Software Engineer</tspan>
+    </text>
+    
+    <text x="570" y="237" font-size="16" font-family="monospace">
+        <tspan fill="#ffa657" font-weight="600">IDE:</tspan>
+        <tspan fill="#c9d1d9">  VS Code, Cursor</tspan>
+    </text>
+    
+    <text x="570" y="293" font-size="16" font-family="monospace">
+        <tspan fill="#ffa657" font-weight="600">Languages.Programming:</tspan>
+        <tspan fill="#c9d1d9">  C#, TypeScript, JavaScript, Python</tspan>
+    </text>
+    
+    <text x="570" y="321" font-size="16" font-family="monospace">
+        <tspan fill="#ffa657" font-weight="600">Languages.Real:</tspan>
+        <tspan fill="#c9d1d9">  Turkish, English</tspan>
+    </text>
+    
+    <text x="570" y="349" font-size="16" font-family="monospace">
+        <tspan fill="#ffa657" font-weight="600">Hobbies:</tspan>
+        <tspan fill="#c9d1d9">  Software, Technology</tspan>
+    </text>
+    
+    <text x="570" y="415" fill="#58a6ff" font-size="16" font-family="monospace">
+        ── GitHub Stats
+    </text>
+    <line
+        x1="700"
+        y1="410"
+        x2="1120"
+        y2="410"
+        stroke="#30363d"
+        stroke-width="1"
+    />
+    
+    <text x="570" y="463" font-size="16" font-family="monospace">
+        <tspan fill="#ffa657" font-weight="600">Repos:</tspan>
+        <tspan fill="#c9d1d9">  5</tspan>
+    </text>
+    
+    <text x="570" y="491" font-size="16" font-family="monospace">
+        <tspan fill="#ffa657" font-weight="600">Stars:</tspan>
+        <tspan fill="#c9d1d9">  0</tspan>
+    </text>
+    
+    <text x="570" y="519" font-size="16" font-family="monospace">
+        <tspan fill="#ffa657" font-weight="600">Followers:</tspan>
+        <tspan fill="#c9d1d9">  1</tspan>
+    </text>
+    
+    <text x="570" y="547" font-size="16" font-family="monospace">
+        <tspan fill="#ffa657" font-weight="600">Commits (1y):</tspan>
+        <tspan fill="#3fb950">  4</tspan>
+    </text>
+    
+    <text x="570" y="575" font-size="16" font-family="monospace">
+        <tspan fill="#ffa657" font-weight="600">Pull Requests (1y):</tspan>
+        <tspan fill="#c9d1d9">  0</tspan>
+    </text>
+    
+    <text x="570" y="603" font-size="16" font-family="monospace">
+        <tspan fill="#ffa657" font-weight="600">Top Languages:</tspan>
+        <tspan fill="#c9d1d9">  Python, HTML, JavaScript</tspan>
+    </text>
+    
+
+    <text
+        x="50"
+        y="640"
+        fill="#6e7681"
+        font-size="12"
+        font-family="monospace"
+    >
+        Last updated: 2026-08-20 14:43 UTC
+    </text>
+</svg>
