@@ -27,7 +27,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Generate profile
+      - name: Generate profile SVGs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python update_profile.py
@@ -44,7 +44,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m "chore: update profile stats"
+          git commit -m "chore: update coder monkey profile"
 
           git pull --rebase origin main
           git push origin main
