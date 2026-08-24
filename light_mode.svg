@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820">
+      <rect width="1200" height="820" fill="#f6f8fa" />
+      <rect x="20" y="20" width="1160" height="780" rx="28" fill="#ffffff" stroke="#d0d7de" stroke-width="2"/>
+
+      <defs>
+        <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#0969da" stop-opacity="0.22"/>
+          <stop offset="100%" stop-color="#1a7f37" stop-opacity="0.08"/>
+        </linearGradient>
+      </defs>
+
+      <rect x="35" y="35" width="1130" height="750" rx="22" fill="url(#glow)" opacity="0.35"/>
+
+      
+    <g>
+      <rect x="35" y="35" width="420" height="650" rx="24" fill="#0a1220" stroke="#1c2b45" />
+      <rect x="55" y="55" width="380" height="110" rx="18" fill="#0d1728" stroke="#1f3458" />
+
+      <text x="78" y="92" fill="#35c2ff" font-size="20" font-family="monospace">$ whoami</text>
+      <text x="78" y="122" fill="#9ecbff" font-size="18" font-family="monospace">coder-monkey --mode=focus</text>
+      <circle cx="400" cy="90" r="8" fill="#3fb950"/>
+      <text x="385" y="125" fill="#8b949e" font-size="13" font-family="monospace">online</text>
+
+      <ellipse cx="245" cy="370" rx="105" ry="120" fill="#8b5e3c" />
+      <ellipse cx="245" cy="385" rx="76" ry="88" fill="#d9b38c" />
+
+      <ellipse cx="188" cy="292" rx="26" ry="34" fill="#8b5e3c" />
+      <ellipse cx="302" cy="292" rx="26" ry="34" fill="#8b5e3c" />
+      <ellipse cx="188" cy="294" rx="15" ry="20" fill="#d9b38c" />
+      <ellipse cx="302" cy="294" rx="15" ry="20" fill="#d9b38c" />
+
+      <ellipse cx="215" cy="360" rx="13" ry="16" fill="#ffffff"/>
+      <ellipse cx="275" cy="360" rx="13" ry="16" fill="#ffffff"/>
+      <circle cx="218" cy="362" r="6" fill="#0d1117"/>
+      <circle cx="272" cy="362" r="6" fill="#0d1117"/>
+
+      <ellipse cx="245" cy="408" rx="18" ry="13" fill="#6b4226" />
+      <path d="M225 435 Q245 452 265 435" stroke="#6b4226" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+      <path d="M160 470 Q245 545 330 470 L340 620 Q245 650 150 620 Z" fill="#111827" stroke="#23324d" />
+      <path d="M190 470 Q245 510 300 470" stroke="#35c2ff" stroke-width="3" fill="none" opacity="0.9"/>
+      <path d="M245 510 L245 620" stroke="#23324d" stroke-width="3"/>
+
+      <rect x="120" y="555" width="250" height="52" rx="10" fill="#0d1728" stroke="#29456f"/>
+      <text x="139" y="588" fill="#7ee787" font-size="16" font-family="monospace">while(alive) &#123; code(); &#125;</text>
+
+      <path d="M340 470 Q398 492 384 562 Q376 606 332 604" stroke="#8b5e3c" stroke-width="14" fill="none" stroke-linecap="round"/>
+      <path d="M332 604 Q355 594 356 572" stroke="#d9b38c" stroke-width="8" fill="none" stroke-linecap="round"/>
+    </g>
+    
+
+      <text x="500" y="85" fill="#0969da" font-size="34" font-family="monospace" font-weight="700">fdogukanctk</text>
+      <text x="500" y="118" fill="#57606a" font-size="18" font-family="monospace">Building things, breaking bugs, shipping fixes</text>
+
+      
+    <rect x="500" y="145" rx="14" ry="14" width="240" height="34" fill="#eef6ff" stroke="#c6ddff" />
+    <text x="516" y="167" fill="#0969da" font-size="14" font-family="monospace">Full Stack Developer</text>
+    
+    <rect x="685" y="145" rx="14" ry="14" width="168" height="34" fill="#eef6ff" stroke="#c6ddff" />
+    <text x="701" y="167" fill="#1a7f37" font-size="14" font-family="monospace">terminal vibes</text>
+    
+    <rect x="500" y="190" rx="14" ry="14" width="132" height="34" fill="#eef6ff" stroke="#c6ddff" />
+    <text x="516" y="212" fill="#bc4c00" font-size="14" font-family="monospace">monkey mode</text>
+    
+      
+    <text x="500" y="270" font-size="18" font-family="monospace">
+      <tspan fill="#0969da" font-weight="700">user:</tspan>
+      <tspan fill="#24292f"> fdogukanctk@github</tspan>
+    </text>
+    
+    <text x="500" y="305" font-size="18" font-family="monospace">
+      <tspan fill="#0969da" font-weight="700">about:</tspan>
+      <tspan fill="#24292f"> Building things, breaking bugs, shipping fixes</tspan>
+    </text>
+    
+    <text x="500" y="355" font-size="18" font-family="monospace">
+      <tspan fill="#bc4c00" font-weight="700">stack:</tspan>
+      <tspan fill="#24292f"> C#, .NET, React, TypeScript, PostgreSQL</tspan>
+    </text>
+    
+    <text x="500" y="390" font-size="18" font-family="monospace">
+      <tspan fill="#bc4c00" font-weight="700">tools:</tspan>
+      <tspan fill="#24292f"> VS Code, Cursor, Docker, Git</tspan>
+    </text>
+    
+    <text x="500" y="425" font-size="18" font-family="monospace">
+      <tspan fill="#bc4c00" font-weight="700">languages:</tspan>
+      <tspan fill="#24292f"> Turkish, English</tspan>
+    </text>
+    
+    <text x="500" y="460" font-size="18" font-family="monospace">
+      <tspan fill="#bc4c00" font-weight="700">hobbies:</tspan>
+      <tspan fill="#24292f"> Coding, UI/UX, Automation</tspan>
+    </text>
+    <text x="500" y="530" fill="#1a7f37" font-size="24" font-family="monospace" font-weight="700">GitHub Stats</text>
+    <text x="500" y="575" font-size="18" font-family="monospace">
+      <tspan fill="#0969da" font-weight="700">repos:</tspan>
+      <tspan fill="#24292f"> 5</tspan>
+    </text>
+    
+    <text x="730" y="575" font-size="18" font-family="monospace">
+      <tspan fill="#0969da" font-weight="700">stars:</tspan>
+      <tspan fill="#24292f"> 0</tspan>
+    </text>
+    
+    <text x="500" y="615" font-size="18" font-family="monospace">
+      <tspan fill="#0969da" font-weight="700">followers:</tspan>
+      <tspan fill="#24292f"> 1</tspan>
+    </text>
+    
+    <text x="730" y="615" font-size="18" font-family="monospace">
+      <tspan fill="#0969da" font-weight="700">commits:</tspan>
+      <tspan fill="#24292f"> 10</tspan>
+    </text>
+    
+    <text x="500" y="655" font-size="18" font-family="monospace">
+      <tspan fill="#0969da" font-weight="700">pull_requests:</tspan>
+      <tspan fill="#24292f"> 0</tspan>
+    </text>
+    
+    <text x="820" y="655" font-size="18" font-family="monospace">
+      <tspan fill="#0969da" font-weight="700">account_age:</tspan>
+      <tspan fill="#24292f"> 1,639 days</tspan>
+    </text>
+    
+        <rect x="500" y="690" width="620" height="85" rx="18" fill="#fdfdfd" stroke="#d0d7de" />
+        <text x="518" y="722" fill="#1a7f37" font-size="18" font-family="monospace" font-weight="700">top_languages:</text>
+        <text x="518" y="754" fill="#24292f" font-size="17" font-family="monospace">Python, HTML, JavaScript</text>
+        <text x="40" y="790" fill="#57606a" font-size="13" font-family="monospace">Last updated: 2026-08-24 06:27 UTC</text>
+    </svg>
+    
